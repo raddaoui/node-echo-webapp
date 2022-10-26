@@ -37,6 +37,7 @@ to test the echo web app running in the container, from a webrowser, visit `loca
 	# create app service plan
 	az appservice plan create --resource-group myResourceGroup --location eastus --name myAppServicePlan --is-linux
 	# create a web app using our container
-	url=$(az webapp create --name myContainerAp --plan myAppServicePlan  --resource-group myResourceGroup --deployment-container-image-name docker.io/raddaoui/node-echo-webapp:v1)
+	webapp_name=echowebApp$RANDOM
+	url=$(az webapp create --name $webapp_name --plan myAppServicePlan  --resource-group myResourceGroup --deployment-container-image-name docker.io/raddaoui/node-echo-webapp:v1 --query defaultHostName -o tsv)
 	# wait for few minutes for the web app to become ready then visit from a webrowser the url from this command
 	echo $url?message=hello
