@@ -6,7 +6,7 @@ The echoserver listen under port 8080 and will print back message you send as a 
 
     node server.js
 
-to test the echo web app running locally, from a webrowser, visit localhost:8080?message=hello
+to test the echo web app running locally, from a webrowser, visit `localhost:8080/?message=hello`
 
 
 ## create a container image
@@ -17,7 +17,7 @@ to test the echo web app running locally, from a webrowser, visit localhost:8080
 
      docker run -p 8888:8080 -d <your username>/node-echo-webapp
 
-to test the echo web app running in the container, from a webrowser, visit localhost:8888?message=hello
+to test the echo web app running in the container, from a webrowser, visit `localhost:8888/?message=hello`
 
 
 ## push to docker hub
